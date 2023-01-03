@@ -7,7 +7,8 @@ import os
 class Database(object):
 
     load_dotenv()
-    url = os.getenv('MONGODB_CONNSTRING')
+    MONGODB_CONNSTRING = f'mongodb+srv://root:{os.environ.get("password")}@photobooth.pxudifq.mongodb.net/?retryWrites=true&w=majority'
+    url = MONGODB_CONNSTRING
     database=None
     client=None
     ca = certifi.where()
